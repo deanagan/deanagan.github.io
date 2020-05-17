@@ -13,7 +13,7 @@ defaults:
       related: true
 ---
 
-This is part 2 of 2 about my Typescript discoveries. If you haven't read part 1, you can read it [here](hhttps://deanagan.github.io/Discovering-Typescript-Part-1/).
+This is part 2 of 2 about my Typescript discoveries. If you haven't read part 1, you can read it [here](https://deanagan.github.io/Discovering-Typescript-Part-1/).
 
 So this entry will be about classes. Object oriented languages have a lot of similarities and Typescript is no different.
 
