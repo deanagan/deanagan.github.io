@@ -18,11 +18,11 @@ This is part 2 of 2 about my Typescript discoveries. If you haven't read part 1,
 So this entry will be about classes. Object oriented languages have a lot of similarities and Typescript is no different.
 
 ## Here's a list of what I'll cover in this blog post:
-1. [Constructors and Implicit Properties](#Constructors-and-Implicit-Properties)
-2. [Class and Method Access](#Class-and-Method-Access)
-3. [Object Literals](#Object-Literals)
-4. [Prototypal Inheritance](#Prototypal-Inheritance)
-5. [Interfaces](#Interfaces)
+1. [Constructors and Implicit Properties](#constructors-and-implicit-properties)
+2. [Class and Method Access](#class-and-method-access)
+3. [Object Literals](#object-literals)
+4. [Prototypal Inheritance](#prototypal-inheritance)
+5. [Interfaces](#interfaces)
 
 
 
