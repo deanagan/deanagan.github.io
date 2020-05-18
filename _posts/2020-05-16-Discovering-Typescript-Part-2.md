@@ -17,7 +17,17 @@ This is part 2 of 2 about my Typescript discoveries. If you haven't read part 1,
 
 So this entry will be about classes. Object oriented languages have a lot of similarities and Typescript is no different.
 
-## 1. Constructors and Implicit Properties
+## Here's a list of what I'll cover in this blog post:
+1. [Constructors and Implicit Properties](#Constructors-and-Implicit-Properties)
+2. [Object Literals](#Object-Literals)
+3. [Class Access](#Class-Access)
+4. [Implicit Properties](#Implicit-Properties)
+5. [Inheritance](#Inheritance)
+6. [Interfaces](#Interfaces)
+7. [Modules](#Modules)
+
+
+## Constructors and Implicit Properties
 
 Coming from C# or other C-based OOP languages, we get so used to having constructors having the same name as the class name. In Typescript, it's different.
 
@@ -41,7 +51,7 @@ class Book {
 }
 ```
 
-Alternatively, this would look cleaner if we use **implicit properties**.
+Alternatively, this would look cleaner if we use ***implicit properties***. In that way, we observe the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). However, this is really a matter of personal preference.
 
 ```
 class Book {
