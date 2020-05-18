@@ -67,19 +67,62 @@ class Book {
     }
 }
 ```
+## 2. Class Access
+
+ Coming from a C# background, default(unspecified) access in classes not nested within other classes/structs are always internal. In Typescript, classes have public access by default.
+```
+class Patient {
+
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        public email: string,
+        private age: number
+    )
+    {}
 
 
-## 2. Object Literals
+    greet() {
+        console.log(`Hello ${this.firstName}`);
+        console.log(`Year Born: ${this.yearBorn()}`);
+    }
 
-## 3. Class Access
+    private yearBorn() : number {
+        let date: Date = new Date();
+        return date.getFullYear() - this.age;
+    }
+}
+```
 
- In typescript, classes have public access by default. Coming from a C# background, default access in classes are always internal.
+The `greet` function above is public, and accessible:
+```
+var patientA = new Patient("Joe", "Black", "joe_black@awesomeemail.com", 24);
+patientA.greet();
+>>> Hello Joe
+Year Born: 1996
+```
 
-## 4. Implicit Properties
+If we try to access yearBorn outside its scope,  we get an error:
+```
+patientA.yearBorn();
+>>> error TS2341: Property 'yearBorn' is private and only accessible within class 'Patient'.
+```
 
-## 5. Inheritance
+## 3. Object Literals
+There are cases in Javascript where we just want something short and simple. Essentially, an object without any intent of creating any prototypal inheritance.
 
-## 6. Interfaces
+Object literals to the rescue! Actually, object literals are already in Javascript, but nice to know we have it here in Typescript.
+```
+const rectangle = {
+    height: 20,
+    width : 40,
+    area: function() { return this.width * this.height; }
+}
+```
 
-
-## 7. Modules
+## 4. Prototypal Inheritance
+TODO
+## 5. Interfaces
+TODO
+## 6. Modules
+TODO
