@@ -19,12 +19,11 @@ So this entry will be about classes. Object oriented languages have a lot of sim
 
 ## Here's a list of what I'll cover in this blog post:
 1. [Constructors and Implicit Properties](#Constructors-and-Implicit-Properties)
-2. [Object Literals](#Object-Literals)
-3. [Class Access](#Class-Access)
-4. [Implicit Properties](#Implicit-Properties)
-5. [Inheritance](#Inheritance)
-6. [Interfaces](#Interfaces)
-7. [Modules](#Modules)
+2. [Class and Method Access](#Class-and-Method-Access)
+3. [Object Literals](#Object-Literals)
+4. [Prototypal Inheritance](#Prototypal-Inheritance)
+5. [Interfaces](#Interfaces)
+
 
 
 ## Constructors and Implicit Properties
@@ -67,7 +66,7 @@ class Book {
     }
 }
 ```
-## 2. Class Access
+## Class And Method Access
 
  Coming from a C# background, default(unspecified) access in classes not nested within other classes/structs are always internal. In Typescript, classes have public access by default.
 ```
@@ -102,13 +101,13 @@ patientA.greet();
 Year Born: 1996
 ```
 
-If we try to access yearBorn outside its scope,  we get an error:
+If we try to access `yearBorn()` outside its scope,  we get an error:
 ```
 patientA.yearBorn();
 >>> error TS2341: Property 'yearBorn' is private and only accessible within class 'Patient'.
 ```
 
-## 3. Object Literals
+## Object Literals
 There are cases in Javascript where we just want something short and simple. Essentially, an object without any intent of creating any prototypal inheritance.
 
 Object literals to the rescue! Actually, object literals are already in Javascript, but nice to know we have it here in Typescript.
@@ -120,9 +119,7 @@ const rectangle = {
 }
 ```
 
-## 4. Prototypal Inheritance
+## Prototypal Inheritance
 TODO
-## 5. Interfaces
-TODO
-## 6. Modules
+## Interfaces
 TODO
