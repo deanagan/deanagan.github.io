@@ -68,7 +68,7 @@ class Book {
 ```
 ## Class And Method Access
 
- Coming from a C# background, default(unspecified) access in classes not nested within other classes/structs are always internal. In Typescript, classes have public access by default.
+ Coming from a C# background, default(unspecified) access in classes that are not nested within other classes/structs are always internal. In Typescript, classes have public access by default.
 ```
 class Patient {
 
