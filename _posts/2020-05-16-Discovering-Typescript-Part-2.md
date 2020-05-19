@@ -143,4 +143,33 @@ To derive from a base class, we simply use the `extends` keyword. If the base cl
 Overriding methods are straightforward. If we need to call a method from the parent class, we just use the `super` keyword.
 
 ## Interfaces
-TODO
+ Any object oriented language wouldn't be complete without interfaces. As OOP coders, we always have that principle of writing to abstractions rather than concrete implementations (or dependency inversion if you prefer the 'D' in SOLID principles).
+
+ So with that, here's what our Typescript interface looks like:
+ ```
+ interface Product {
+    name: string;
+    sku: string;
+    id: number;
+    discount(): number;
+}
+```
+
+So the above code tells us that name, sku and id are properties and that discount is a method.
+
+As expected, writing against this interface is very similar when doing inheritance:
+```
+class Chair implements Product {
+    constructor(
+        public name: string,
+        public sku: string,
+        public id: number
+    ) {
+
+    }
+
+    discount() : number {
+        return 0.25;
+    }
+}
+```
