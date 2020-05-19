@@ -120,6 +120,27 @@ const rectangle = {
 ```
 
 ## Prototypal Inheritance
-TODO
+Being an object oriented language, inheritance also exists in Typescript.
+
+Here's how:
+```
+class OutPatient extends Patient {
+    constructor(
+        fn: string, ln: string, email: string, age: number
+    ) {
+        super(fn, ln, email, age);
+    }
+
+    greet() {
+        super.greet();
+        console.log(`Welcome to outpatient services, ${this.firstName}. Please pick a number.`);
+    }
+}
+```
+
+To derive from a base class, we simply use the `extends` keyword. If the base class has a constructor, we can supply it by using the `super` keyword, and we're all set.
+
+Overriding methods are straightforward. If we need to call a method from the parent class, we just use the `super` keyword.
+
 ## Interfaces
 TODO
