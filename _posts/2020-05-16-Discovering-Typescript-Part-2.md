@@ -138,7 +138,7 @@ class OutPatient extends Patient {
 }
 ```
 
-To derive from a base class, we simply use the `extends` keyword. If the base class has a constructor, we can supply it by using the `super` keyword, and we're all set.
+To derive from a base class, we simply use the `extends` keyword. If the base class has a constructor, we can construct the base class by using the `super` keyword, and we're all set.
 
 Overriding methods are straightforward. If we need to call a method from the parent class, we just use the `super` keyword.
 
