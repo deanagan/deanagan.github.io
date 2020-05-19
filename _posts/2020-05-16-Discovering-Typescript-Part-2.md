@@ -157,7 +157,7 @@ Overriding methods are straightforward. If we need to call a method from the par
 
 So the above code tells us that name, sku and id are properties and that discount is a method.
 
-As expected, writing against this interface is very similar when doing inheritance:
+Writing against this interface, this would be:
 ```
 class Chair implements Product {
     constructor(
