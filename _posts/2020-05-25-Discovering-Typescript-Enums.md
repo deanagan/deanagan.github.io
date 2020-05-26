@@ -13,7 +13,7 @@ defaults:
       related: true
 ---
 
-Coming from an OOP, C-based language (C++, C#), enums are essentials when it comes to making magical specific numbers into human-readable names. With Typescript, enums have some slightly added functionality than the other languages.
+Coming from an OOP, C-based language (C++, C#), enums are essentials when it comes to making magical specific numbers into human-readable names. With Typescript, enums are similar, but have differences from other languages.
 
 ## 1. Enums Under The Hood
 
@@ -58,6 +58,12 @@ The `Fruit["Apple"] = 0` bit in:
 Fruit[Fruit["Apple"] = 0] = "Apple";
 ```
 is equivalent to `Fruit[0] = "Apple";`, thus, we can access the enum as `Fruit[0]`, and this returns a string if we use numerical indices to access the enum.
+
+This is really great as it means we can access the enum via index or loop through it. In C#, we can create an array from the enum in order for the enum to be accessed by index.
+```
+// C# Code to access an enum via index, or loop through it.
+var fruits = (Fruit[])Enum.GetValues(typeof(Fruit));
+```
 
 So, if we print out `Apple` in `Fruit`:
 ```
@@ -117,13 +123,14 @@ declare enum AmbientFruit
     Mango,
     Banana
 }
+console.log(`An apple's numeric value is ${AmbientFruit.Apple}`);
 ```
 Its compiled Javascript looks like:
 ```
 console.log("An apple's numeric value is " + AmbientFruit.Apple);
 ```
 
-Ambient enums don't emit a lookup object. When I looked at the value of AmbientFruit.Apple as Javascript code, it is like telling the compiler that I have this type somewhere, and you can go ahead and compile it. If the type doesn't really exist, then we get a runtime error.
+Ambient enums don't emit a lookup object. When I looking at the value of AmbientFruit.Apple as Javascript code, it appears like it is telling the compiler that *"I have this type somewhere, and you can go ahead and compile it"*. If the type doesn't really exist, then we get a **runtime error**.
 
 ## 4. Preserve Const Enum Flag
 
@@ -181,8 +188,14 @@ var FruitStrings;
 console.log("An apple's " + typeof (FruitStrings.APPLE) + " value is \"" + FruitStrings.APPLE + "\"");
 ```
 
-Notice that the numerical value is gone. It also doesn't have a reverse lookup. So `let t = FruitStrings["Apple"];` will produce an error:
- `Property 'Apple' does not exist on type 'typeof FruitStrings'. Did you mean 'APPLE'?`
+Notice that the numerical value is gone. It also doesn't have a reverse lookup. So
+```
+let t = FruitStrings["Apple"];
+```
+will produce an error:
+```
+Property 'Apple' does not exist on type 'typeof FruitStrings'. Did you mean 'APPLE'?
+```
 
 
-And that's it! I liked the idea of a reverse lookup for enums. It makes it easier to loop through enum values if we ever have to.
+And that's it for enums. It looks great to have reverse lookups. They look pretty handy.
