@@ -130,7 +130,7 @@ Its compiled Javascript looks like:
 console.log("An apple's numeric value is " + AmbientFruit.Apple);
 ```
 
-Ambient enums don't emit a lookup object. When I looking at the value of AmbientFruit.Apple as Javascript code, it appears like it is telling the compiler that *"I have this type somewhere, and you can go ahead and compile it"*. If the type doesn't really exist, then we get a **runtime error**.
+Ambient enums don't emit a lookup object. Looking at the value of AmbientFruit.Apple as Javascript code, it appears like it is telling the compiler that *"I have this type somewhere, and you can go ahead and compile it"*. If the type doesn't really exist, then we get a **runtime error**.
 
 ## 4. Preserve Const Enum Flag
 
