@@ -64,19 +64,20 @@ Below is what `holidays.Australia` contains.
 (datetime.date(2020, 12, 26), 'Boxing Day')
 (datetime.date(2020, 12, 28), 'Boxing Day (Observed)')
 ```
+This is default to `ACT`.
+
+States can have different holidays. The Queen's Birthday holiday on June 8th isn't on the list by default as it is not the same in NSW.
+
+So let's add that in by providing a `prov` argument `NSW`.
 
 
-
-States can have different holidays. The Queen's Birthday holiday on June 8th isn't on the list. So let's add that in.
-
-Note that holidays.Australia() is a dictionary type. And we only need the keys to store in the list.
 ```
 # First, create our holidays list
-nsw_holidays = [*holidays.Australia(years=2020).keys()]
+nsw_holidays = [*holidays.Australia(years=2020, prov='NSW').keys()]
 
-# Second, add queen's bday holiday
-queen_bday_holiday = pd.to_datetime('8/06/2020', format='%d/%m/%Y')
-nsw_holidays.append(queen_bday_holiday.date())
+# Note, add any holiday or absences manually if any
+# sick_leave = pd.to_datetime('29/06/2020', format='%d/%m/%Y').date()
+# nsw_holidays[sick_leave] = "Colds"
 ```
 
 Now that we're all setup, let's call the `busday_count` function in numpy.
@@ -96,13 +97,13 @@ numpy.busday_count(begindates,
 
 Note that the weekmask is a boolean representation of what days to count in a week. This is a monday to sunday representation. So the 2 zeros at the end means we exclude saturdays and sundays which is what we really want.
 
-Now that we already have `nsw_holidays` setup, we only need to assign this to the `holidays` parameter.
+Now that we have `nsw_holidays`, we need to assign this to the `holidays` parameter. Note that nsw_holidays is a dictionary, so we unpack the keys only.
 
 We will keep `busdaycal` and `out` as None.
 
-So now, we count our wfh days:
+So now, we count our wfh days. Note that holidays.Australia() is a dictionary type. And we only need the keys to store in the list.
 ```
-wfh_day_count = np.busday_count(start, end, holidays=nsw_holidays)
+wfh_day_count = np.busday_count(start, end, holidays=[*nsw_holidays.keys()])
 ```
 
 wfh_day_count is the total number of days you've worked from home from March 18 to June 30.
@@ -116,18 +117,13 @@ import holidays
 start = pd.to_datetime('18/03/2020', format='%d/%m/%Y').date()
 end = pd.to_datetime('01/07/2020', format='%d/%m/%Y').date()
 
-# First, create our holidays list
-nsw_holidays = [*holidays.Australia(years=2020).keys()]
+nsw_holidays = holidays.Australia(years=2020, prov='NSW')
 
-# Second, add queen's bday holiday
-queen_bday_holiday = pd.to_datetime('8/06/2020', format='%d/%m/%Y')
-nsw_holidays.append(queen_bday_holiday.date())
+print(*nsw_holidays.items(), sep='\n')
 
+wfh_day_count = np.busday_count(start, end, holidays=[*nsw_holidays.keys()])
 
-wfh_day_count = np.busday_count(start, end, holidays=nsw_holidays)
-
-print(wfh_day_count)
-
+print(f'Total WFH Days {wfh_day_count}')
 ```
 
 And that's it. I hope this helps anyone looking for a quick way to compute.
