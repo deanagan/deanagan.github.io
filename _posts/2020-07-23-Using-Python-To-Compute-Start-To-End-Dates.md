@@ -16,7 +16,7 @@ Tax time is upon us in Australia, and due to covid19, this tax time is a bit dif
 
 In Australia, the tax office introduced a 'shortcut method' to compute for deductions. See [here](https://www.ato.gov.au/General/COVID-19/Support-for-individuals-and-employees/Employees-working-from-home/#ShortcutMethod) for more details.
 
-The shortcut method is simply claiming a deduction of 80 cents for each hour worked from home. We know how many hours we work in a day, but how do we compute the total number of days excluding the holidays and weekends without manually counting the days?
+The shortcut method is simply claiming a deduction of 80 cents for each hour worked from home. We know how many hours we work in a day, but how do we compute the total number of days excluding the holidays and weekends without manually counting the days on a calendar?
 
 We will try to answer that question in this blog post.
 
