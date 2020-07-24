@@ -72,7 +72,7 @@ So let's add that in by providing a `prov` argument `NSW`.
 
 
 ```
-# First, create our holidays list
+# First, create our holidays lookup
 nsw_holidays = [*holidays.Australia(years=2020, prov='NSW')]
 
 # Note, add any holiday or absences manually if any
