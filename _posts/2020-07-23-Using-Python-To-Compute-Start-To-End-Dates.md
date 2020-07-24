@@ -101,7 +101,7 @@ Now that we have `nsw_holidays`, we need to assign this to the `holidays` parame
 
 We will keep `busdaycal` and `out` as None.
 
-So now, we count our wfh days. Note that holidays.Australia() is a dictionary type. And we only need the keys to store in the list.
+So now, we count our wfh days.
 ```
 wfh_day_count = np.busday_count(start, end, holidays=[*nsw_holidays.keys()])
 ```
