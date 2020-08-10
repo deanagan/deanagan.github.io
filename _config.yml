@@ -131,7 +131,7 @@ author:
       icon: "fab fa-fw fa-dev"
       url: "https://dev.to/deanagan"
 
-      - label: "Recipes (An ongoing react project)"
+    - label: "Recipes (An ongoing react project)"
       icon: "fas fa-fw fa-link"
       url: "http://deanagan.github.io/recipes"
 # Site Footer
