@@ -27,7 +27,7 @@ We want the function to return 100, where 99 and 1 are added together.
 
 So in a map-reduce approach, this is my solution. (Also, as a first step, we had to split the string using space as a delimiter.).
 
-```
+```javascript
 export function sum(input: string): number {
   return input.split(' ')
               .map(word => Number(word) || 0)
@@ -36,7 +36,7 @@ export function sum(input: string): number {
 ```
 
 So to make sure our function is correct, we write a couple of tests:
-```
+```javascript
   describe('Test sum of numbers', () => {
     it('should return 100 bottles of beer', () => {
       expect(sum('99 bottles of beer on the wall, take 1 down pass it around'))
@@ -48,7 +48,8 @@ So to make sure our function is correct, we write a couple of tests:
         .to.be.equal(0);
     });
   });
-
+```
+```
   Test sum of numbers
     √ should return 100
     √ should return 0 for no more bottles of beer
@@ -63,7 +64,7 @@ So to make sure our function is correct, we write a couple of tests:
 The `Number` function was my typical way to go in Typescript. But I discovered that we can also use the shorter unary plus operator.
 
 With that, we modify our code so it is shorter:
-```
+```javascript
 export function sum(input: string): number {
   return input.split(' ')
               .map(word => +word || 0)
@@ -77,7 +78,7 @@ Note that we've simply replaced `Number(word)` with just `+word`. It works just 
 So what if the requirements change where the input string is now optional? We have to now deal with the input possibly being `undefined`. Let's say, we just return `undefined` if there is no input string.
 
 With that, let's change our function:
-```
+```javascript
 export function sum(input?: string): number | undefined {
   if (input) {
     return undefined;
@@ -91,7 +92,7 @@ export function sum(input?: string): number | undefined {
 Notice, we also had to add `| undefined` for the return type as we want our return to be either a number or undefined.
 
 Adding a unit test for it, and we still pass:
-```
+```javascript
   describe('Test sum of numbers', () => {
     it('should return 100 bottles of beer', () => {
       expect(sum('99 bottles of beer on the wall, take 1 down pass it around'))
@@ -107,7 +108,8 @@ Adding a unit test for it, and we still pass:
       expect(sum()).to.be.undefined;
     });
   });
-
+```
+```
   Test sum of numbers
     √ should return 100 bottles of beer
     √ should return 0 for no more bottles of beer
@@ -118,7 +120,7 @@ Adding a unit test for it, and we still pass:
 ```
 
 And now comes the optional chaining operator. We can get rid of the `if` clause we added by using the optional chaining operator. This will make it cleaner.
-```
+```javascript
 export function sum(input?: string): number | undefined {
   return input?.split(' ')
               .map(word => +word || 0)
@@ -132,7 +134,7 @@ Optional chaining lets us write code that immediately stops running if we encoun
 ## Nullish Coalescing
 
 So now, a new requirement came in! Instead of returning `undefined`, we must return zero instead if there is no argument. To accomodate the new requirement, we've now changed our code to:
-```
+```javascript
 export function sum(input?: string): number {
   if (input) {
     return input.split(' ')
@@ -146,7 +148,7 @@ export function sum(input?: string): number {
 This is where the nullish coalescing operator comes very handy. The nullish coalescing operator lets us fallback to a default value if the left side of it is `null` or `undefined`.
 
 With this operator, our code will be:
-```
+```javascript
 export function sum(input?: string): number {
 
   return input?.split(' ')
@@ -157,7 +159,7 @@ export function sum(input?: string): number {
 ```
 
 And we write a few more tests to make sure we are behaving correctly:
-```
+```javascript
   describe('Test sum of numbers', () => {
     it('should return 100 bottles of beer', () => {
       expect(sum('99 bottles of beer on the wall, take 1 down pass it around'))
@@ -182,7 +184,8 @@ And we write a few more tests to make sure we are behaving correctly:
     });
 
   });
-
+```
+```
   Test sum of numbers
     √ should return 100 bottles of beer
     √ should return 0 for no more bottles of beer
