@@ -13,7 +13,7 @@ defaults:
       related: true
 ---
 
-Today, I decided to learn Typescript, and here are 6 items I learned. These are not meant to be a comprehensive coverage of the language.
+Today, I decided to learn Typescript, and here are 6 items I learned. These are not meant to be comprehensive coverage of the language.
 
 ## 1. Variables and Functions
 Being a transpiler for Javascript, it is expected to be closer to how Javascript does its function.
@@ -190,7 +190,7 @@ These are called **rest parameters** in Typescript.
 
 ## 5. Function Overloading
 
-Typescript also supports function overloading. It is somewhat very unique in my opinion, when comparing it to other object oriented languages.
+Typescript also supports function overloading. It is somewhat very unique in my opinion when comparing it to other object-oriented languages.
 
 Python, being a dynamic language does not have a concept of function overloading (we do have multiple dispatch in Python, but let's not go there).
 
@@ -266,7 +266,7 @@ let greetFn = name:string => console.log(`Hello ${name}`);
 greetFn("Bob");
 ```
 
-This however leads to an error, so I had to put back the parenthesis.
+This, however, leads to an error, so I had to put back the parenthesis.
 
 
 And that is it! Stay tuned for part 2, where I will share a few things I learned about classes in Typescript.
