@@ -80,7 +80,7 @@ So what if the requirements change where the input string is now optional? We ha
 With that, let's change our function:
 ```javascript
 export function sum(input?: string): number | undefined {
-  if (input) {
+  if (!input) {
     return undefined;
   }
   return input.split(' ')
@@ -88,7 +88,10 @@ export function sum(input?: string): number | undefined {
               .reduce((total, current) => total + current, 0);
 }
 ```
-
+Note that we had to put in the `if` clause, otherwise we'll get:
+```
+error TS2532: Object is possibly 'undefined'.
+```
 Notice, we also had to add `| undefined` for the return type as we want our return to be either a number or undefined.
 
 Adding a unit test for it, and we still pass:
