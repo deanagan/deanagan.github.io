@@ -28,6 +28,7 @@ The function `add` takes 2 numbers and returns their sum. Typescript treats both
 console.log(`Sum of numbers ${add(434,344)}`);
 console.log(`Sum of floating point numbers ${add(43.4, 23.4)}`);
 ```
+```
 >>> Sum of numbers 778
 >>> Sum of floating point numbers 66.8
 ```
