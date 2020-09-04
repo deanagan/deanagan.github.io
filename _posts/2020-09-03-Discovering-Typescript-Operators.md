@@ -122,7 +122,7 @@ Adding a unit test for it, and we still pass:
   3 passing (9ms)
 ```
 
-And now comes the optional chaining operator. We can get rid of the `if` clause we added by using the optional chaining operator. This will make it cleaner.
+And now comes the optional chaining operator. We can get rid of the `if` clause we added earlier by using the optional chaining operator. This will make it cleaner.
 ```javascript
 export function sum(input?: string): number | undefined {
   return input?.split(' ')
