@@ -33,7 +33,7 @@ We will use Python (I used 3.8.4 at the time of writing this entry) to compute f
 ## 2. Let's get coding
 
 First, let's import all our packages:
-```
+```python
 import pandas as pd
 import numpy as np
 import holidays
@@ -44,7 +44,7 @@ So we'll need to supply our start and end dates as strings and convert them to d
 For example, if I worked from home from March 18 to June 30, I supply March 18 to July 1. We have to add +1 day as this is required by numpy's `busday_count` function. We'll talk more about that in the later part.
 
 Let's also call the `.date()` at the end to exclude the time from datetime.
-```
+```python
 start = pd.to_datetime('18/03/2020', format='%d/%m/%Y').date()
 end = pd.to_datetime('01/07/2020', format='%d/%m/%Y').date()
 ```
@@ -52,7 +52,7 @@ end = pd.to_datetime('01/07/2020', format='%d/%m/%Y').date()
 Using the `holidays` package, we can easily pick up the holidays in any country it supports. I live in Australia, so we use that.
 
 Below is what `holidays.Australia` contains.
-```
+```python
 >>> print(*holidays.Australia(years=2020).items(), sep="\n")
 (datetime.date(2020, 1, 1), "New Year's Day")
 (datetime.date(2020, 1, 26), 'Australia Day')
@@ -71,7 +71,7 @@ States can have different holidays. The Queen's Birthday holiday on June 8th isn
 So let's add that in by providing a `prov` argument `NSW`.
 
 
-```
+```python
 # First, create our holidays lookup
 nsw_holidays = [*holidays.Australia(years=2020, prov='NSW')]
 
@@ -86,7 +86,7 @@ The `busday_count` function will count the number of days between 2 dates, exclu
 
 According to numpy's [documentation](https://numpy.org/doc/stable/reference/generated/numpy.busday_count.html), this is the function signature:
 
-```
+```python
 numpy.busday_count(begindates,
                    enddates,
                    weekmask='1111100',
@@ -102,14 +102,14 @@ Now that we have `nsw_holidays`, we need to assign this to the `holidays` parame
 We will keep `busdaycal` and `out` as None.
 
 So now, we count our wfh days.
-```
+```python
 wfh_day_count = np.busday_count(start, end, holidays=[*nsw_holidays.keys()])
 ```
 
 wfh_day_count is the total number of days you've worked from home from March 18 to June 30.
 
 Here's the whole source code:
-```
+```python
 import pandas as pd
 import numpy as np
 import holidays
