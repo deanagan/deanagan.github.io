@@ -18,16 +18,16 @@ Today, I decided to learn Typescript, and here are 6 items I learned. These are 
 ## 1. Variables and Functions
 Being a transpiler for Javascript, it is expected to be closer to how Javascript does its function.
 Typescript functions look like this:
-```
+```typescript
 function add(addend1: number, addend2:number) : number {
     return addend1 + addend2;
 }
 ```
 The function `add` takes 2 numbers and returns their sum. Typescript treats both floats and integers as numbers. So a float works too for this function.
-```
+```typescript
 console.log(`Sum of numbers ${add(434,344)}`);
 console.log(`Sum of floating point numbers ${add(43.4, 23.4)}`);
-
+```
 >>> Sum of numbers 778
 >>> Sum of floating point numbers 66.8
 ```
@@ -47,7 +47,7 @@ Console.WriteLine($"The sum of {x} and {y} is {x+y}");
 >>> The sum of 4 and 5 is 9
 ```
 **Python**
-```
+```python
 x,y = 4,5
 print(f"The sum of {x} and {y} is {x+y}")
 >>> The sum of 4 and 5 is 9
@@ -66,7 +66,7 @@ console.log(`The sum of ${a} and ${b} is ${a+b}`);
 This one caught me by surprise when I tried passing the contents of a number list into a function.
 
 Suppose, I have a function that contains a switch like below:
-```
+```typescript
 function giveMe(what:number) {
     switch(what) {
         case 1:
@@ -81,7 +81,7 @@ function giveMe(what:number) {
 }
 ```
 then I supply numbers from a list:
-```
+```typescript
 let nums = [1,2,3];
 
 for(var n of nums) {
@@ -98,12 +98,12 @@ foreach(var number in numbers) {
 ```
 
 **Python**
-```
+```python
 for number in numbers:
     give_me(number)
 ```
 Doing something similar in Typescript like below:
-```
+```typescript
 for(var n in nums) {
     giveMe(n);
 }
@@ -116,7 +116,7 @@ Will give you a type error: `Argument of type 'string' is not assignable to para
 Like C# and Python, Typescript has optional and default parameters.
 
 Typescript has it as such for optional parameters:
-```
+```typescript
 function increase(num: number, inc?:number) : number {
     if (inc != undefined) {
         return num + inc;
@@ -134,7 +134,7 @@ console.log(increase(10,2));
 `inc?: number` is an optional parameter.
 
 For default parameters, it goes like:
-```
+```typescript
 function increase(num: number, inc:number = 1) : number {
     return num + inc;
 }
@@ -158,7 +158,7 @@ GetTotal(1,2,3,4,5);
 ```
 In Python, its equivalent for taking a variable number of arguments:
 **Python**
-```
+```python
 def get_total(*addends):
 	return sum(addends)
 
@@ -168,7 +168,7 @@ get_total(1,2,3,4,5)
 
 
 Similarly, this can be achieved in **Typescript** using the spread operator:
-```
+```typescript
 function getTotal(...addends:number[]) : number {
     let total = 0;
     for (var n of addends) {
@@ -207,13 +207,13 @@ public static int Add(int a, int b, int c) {
 However, with **typescript**, it works differently. We have to do it by writing a method declaration for each overload first, then implement the method.
 
 So we make this for each overload like:
-```
+```typescript
 function add(a: number, b: number) : number;
 function add(a: number, b: number, c: number) : number;
 ```
 
 Then we implement the method/function:
-```
+```typescript
 function add(a: number, b: number, c?: number) : number {
     let total = a + b;
 
@@ -227,7 +227,7 @@ console.log(add(1,2,3));
 console.log(add(1,2));
 ```
 In some cases, we may end up checking the type of the argument. As an example, if we had a method that had different types:
-```
+```typescript
 function identification(id: string) : string;
 function identification(id: number): string;
 
@@ -242,8 +242,8 @@ function identification(value: (string | number)): string {
 
 console.log(identification("XX-123"));
 console.log(identification(123));
->>> My id is XX-123
->>> My id is XX-123
+// >>> My id is XX-123
+// >>> My id is XX-123
 ```
 
 ## 6. Arrow Functions
@@ -254,12 +254,12 @@ let greetFn = (name:string) => console.log(`Hello ${name}`);
 greetFn("Bob");
 ```
 As a side note, I was quite surprised that there is a subtle difference when using arrow operators in Javascript ES6. Below is legal in ES6:
-```
+```typescript
 let greetFn = name => console.log(`Hello ${name}`);
 greetFn("Bob");
 ```
 So with this, I thought I could do:
-```
+```typescript
 // Note without parenthesis around name:string
 let greetFn = name:string => console.log(`Hello ${name}`);
 greetFn("Bob");
