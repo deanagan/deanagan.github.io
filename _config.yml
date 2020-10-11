@@ -135,8 +135,8 @@ author:
       icon: "fas fa-fw fa-link"
       url: "http://deanagan.github.io/recipes"
 
-    - label: "Python Checkio.org. All the coding fun."
-      icon: "fas fa-fw fa-link"
+    - label: "Python Checkio.org Profile"
+      icon: "fas fa-fw fa-python"
       url: "https://py.checkio.org/user/kunkka71"
 # Site Footer
 footer:
