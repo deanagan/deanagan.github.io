@@ -134,6 +134,10 @@ author:
     - label: "Recipes (An ongoing react project)"
       icon: "fas fa-fw fa-link"
       url: "http://deanagan.github.io/recipes"
+
+    - label: "Python Checkio.org. All the coding fun."
+      icon: "fas fa-fw fa-link"
+      url: "https://py.checkio.org/user/kunkka71"
 # Site Footer
 footer:
   # links:
