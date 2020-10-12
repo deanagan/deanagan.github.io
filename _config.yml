@@ -136,7 +136,7 @@ author:
       url: "http://deanagan.github.io/recipes"
 
     - label: "Python Checkio.org Solutions"
-      icon: "fas fa-fw fa-python"
+      icon: "fab fa-python"
       url: "https://py.checkio.org/user/kunkka71/solutions/share/e6584d002282b41a9f940f135a97331f/"
 # Site Footer
 footer:
