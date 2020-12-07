@@ -131,9 +131,13 @@ author:
       icon: "fab fa-fw fa-dev"
       url: "https://dev.to/deanagan"
 
-    - label: "Recipes (An ongoing react project)"
+    - label: "Recipes (React project)"
       icon: "fas fa-fw fa-link"
       url: "http://deanagan.github.io/recipes"
+
+    - label: "Gallery (Vue + Reveal.js project)"
+      icon: "fas fa-fw fa-link"
+      url: "http://deanagan.github.io/gallery"
 
     - label: "Python Checkio.org Solutions"
       icon: "fab fa-python"
