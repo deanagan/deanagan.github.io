@@ -13,7 +13,7 @@ defaults:
       related: true
 ---
 
-Happy new year 2021! I want to kick off my new year blog entry with a beginner's guide to my favorite language, Python.
+Happy new year 2021! I want to kick off my new year blog entry with a beginner's guide to my favourite language, Python.
 
 We've all been there, learning a new language, there is always that little gem of a feature that is quite handy and makes the language enjoyable to write with. When I started learning Python, a lot of things changed for me with how I see programming, especially with all these things they call "pythonic".
 
@@ -87,7 +87,7 @@ test_top_scorer.py::test_top_scorer[data1-Stephen Curry-Stephen Curry is top avg
 test_top_scorer.py::test_top_scorer[data2--No data, return empty string] PASSED
 ```
 
-Our code above works! But with how it is in the Python community, I always tend to ask myself, did I miss a language feature that would have made my code shorter?
+Our code above works! But with how it is in the Python community, I always tend to ask myself, did I miss a language feature that would have made my code shorter and avoided reinventing the wheel?
 
 In this case, there definitely is. We can use the `max` function to solve it.
 
@@ -150,7 +150,7 @@ def top_scorer(stats: dict) -> str:
   return max(stats, key=lambda k: stats[k], default='')
 ```
 
-It still works and now, we're down to one line. We're not finished though. The key argument takes a unary function. With functions being first class objects in Python, we can pass a function directly.
+It still works and now, we're down to one line. We're not finished though. The key argument takes a unary function. With functions being first-class objects in Python, we can pass a function directly.
 
 ```python
 def top_scorer(stats: dict) -> str:
@@ -187,7 +187,7 @@ Pandas is another python library for data analysis. It is used by the data scien
 
 Our example isn't much, but just for fun, we can use a pandas function to solve the problem too.
 
-We can use the `idxmax` of a `Series` in pandas. A `Series` is a one dimensional ndarray in pandas.
+We can use the `idxmax` of a `Series` in pandas. A `Series` is a one-dimensional ndarray in pandas.
 
 So our code would be:
 ```python
