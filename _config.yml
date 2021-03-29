@@ -137,7 +137,7 @@ author:
 
     - label: "Planning Board (Vue In Progess)"
       icon: "fas fa-fw fa-link"
-      url: "http://deanagan.github.io/planningboard"
+      url: "http://deanagan.github.io/planning-board"
 
     - label: "Python Checkio.org Solutions"
       icon: "fab fa-python"
