@@ -165,3 +165,7 @@ This utility extracts types from T that are assignable to U. It's useful for cre
 ### 11. `NonNullable<T>`
 
 This utility removes null and undefined from the type T. It's useful for ensuring that a value is not null or undefined.
+
+
+## Micro Frontend Architectures
+## 
