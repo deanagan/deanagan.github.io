@@ -8,6 +8,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      date: 2025-06-12
       comments: true
       share: true
       related: true
