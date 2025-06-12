@@ -13,8 +13,6 @@ defaults:
       related: true
 ---
 
-# Making Flutter Code a Little Cleaner with Extension Methods
-
 If you’ve built more than a few Flutter screens, you’ve probably seen code like this everywhere:
 ```dart
 padding: EdgeInsets.symmetric(
@@ -26,7 +24,6 @@ padding: EdgeInsets.symmetric(
  ❌ But it gets tedious.
  ❌ And it clutters your build methods.
 
- 
 
 In this post, I’ll share how I use Dart extension methods to write cleaner, more maintainable Flutter UI code — with analogies to C#, TypeScript, and Python.
 
@@ -119,13 +116,37 @@ With extensions:
 ## 💡 Analogy Across Languages
 
 You might be familiar with similar concepts in other languages:
-| Language   | Concept                          | Analogy                                                                                                                         |
-| ---------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| C#         | Extension Methods                | `public static class MyExtensions { public static Padding HorizontalPadding(this BuildContext context, double percent) { ... } }` |
-| TypeScript | Prototype or Module Augmentation | Add methods to existing types via prototype or declaration merging                                                              |
-| Python     | Monkey Patching                  | Dynamically add methods at runtime (though less safe)                                                                           |
-| Dart       | Native Extension Methods         | Fully type-safe and integrated into the language                                                                                |
 
+### C#
+
+- Has native support for extension methods using public static class and this keyword.
+- Example:
+
+```csharp
+public static class MyExtensions {
+  public static Padding HorizontalPadding(this BuildContext context, double percent) 
+  {
+    // ...
+  }
+}
+```
+
+TypeScript
+
+- You can add methods via prototype extension or module augmentation.
+- Though it’s a bit more manual compared to Dart's native approach.
+
+Python
+
+- You can dynamically attach methods to classes at runtime (monkey patching).
+- This is flexible, but riskier and less type-safe compared to Dart.
+
+Dart
+
+- Native extension method support.
+- Fully type-safe, strongly integrated into the language, no hacks required.
+
+Dart gives you this power natively — safely, strongly typed, and fully supported by the language.
 
 ## ✨ Before vs After
 **Before:**
@@ -141,10 +162,11 @@ padding: context.horizontalPadding(0.1),
 
 ## 🚀 You Can Go Even Further
 ### Access Theme Colors Easily
+
 ```dart
-extension ThemeColors on BuildContext {{
+extension ThemeColors on BuildContext {
   Color get primaryColor => Theme.of(this).colorScheme.primary;
-}}
+}
 ```
 
 **Usage:**
@@ -153,11 +175,11 @@ color: context.primaryColor,
 ```
 ### Responsive Height
 ```dart
-extension PercentHeight on BuildContext {{
-  double percentHeight(double percent) {{
+extension PercentHeight on BuildContext {
+  double percentHeight(double percent) {
     return MediaQuery.of(this).size.height * percent;
-  }}
-}}
+  }
+}
 ```
 
 **Usage:**
