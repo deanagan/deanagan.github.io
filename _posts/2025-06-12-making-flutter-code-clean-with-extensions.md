@@ -20,9 +20,9 @@ padding: EdgeInsets.symmetric(
 )
 ```
 
- ✅ It works.
- ❌ But it gets tedious.
- ❌ And it clutters your build methods.
+- ✅ It works.
+- ❌ But it gets tedious.
+- ❌ And it clutters your build methods.
 
 
 In this post, I’ll share how I use Dart extension methods to write cleaner, more maintainable Flutter UI code — with analogies to C#, TypeScript, and Python.
@@ -92,9 +92,9 @@ Now, you can call your new method like this:
 ```dart
 padding: context.horizontalPadding(0.1),
 ```
-✅ Much cleaner
-✅ Easier to read
-✅ No need to pass context manually
+- ✅ Much cleaner
+- ✅ Easier to read
+- ✅ No need to pass context manually
 
 
 ## ⚙️ Why This Is Especially Useful in Flutter
